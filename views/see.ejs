@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for styling -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 15px;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-left: 385px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .user-list {
+            margin-top: 20px;
+        }
+        .user-card {
+            background-color: #ffffff;
+            border: 1px solid #e1e1e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .user-card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .header {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #bb2d3b;
+            border-color: #bb2d3b;
+        }
+        /* Custom form styles */
+        .user-form {
+            background-color: #f0f3f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .user-form label {
+            font-weight: bold;
+        }
+        .user-form .form-control {
+            border-color: #007bff;
+        }
+        .user-form .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .user-form .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        /* Custom table styles */
+        .user-table {
+            margin-top: 30px;
+        }
+        .user-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .user-table th,
+        .user-table td {
+            border: 1px solid #e1e1e1;
+            padding: 10px;
+            text-align: left;
+        }
+        .user-table th {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="header">
+                    <h1>Admin Dashboard</h1>
+                </div>
+                <ul>
+                    <li><a href="./">Dashboard</a></li>
+                    <li><a href="/add">Add User</a></li>
+                    <li><a href="/see">View Users</a></li>
+                    <li><a href="#">Edit User</a></li>
+                    <li><a href="#">Delete User</a></li>
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="col-md-9 content">
+                <h1>View Users</h1>
+                <!-- User Table -->
+                <div class="user-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Age</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample user data (replace with actual data) -->
+                            <% users.forEach(user => { %>
+                            <tr>
+                                
+                                <td><%= user.id %></td>
+                                <td><%= user.name %></td>
+                                <td><%= user.username %></td>
+                                <td><%= user.age %></td>
+                                <td><%= user.address %></td>
+                                
+                            </tr>
+                            <% }); %>
+                            
+                            <!-- Add more rows for additional users -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap and jQuery scripts at the end for better performance -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
